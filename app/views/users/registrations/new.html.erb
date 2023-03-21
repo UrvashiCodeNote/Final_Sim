@@ -23,13 +23,15 @@
   </div>
 
   <div class="field">
-    <%= f.label :role %><br />
-    <%= f.select :role, User.roles.keys.map { |s| [s.titleize, s] } %>
+    <%= f.label :roles %><br />
+    <%= f.select :roles, User.roles.keys.map { |s| [s.titleize, s] },{
+     include_blank: true } %>
   </div>
 
-<div class="field">
+  <div class="field">
   <%= select_tag "services", options_for_select(ServiceProvider.services.keys.map { |s| [s.titleize, s] }, "Airtal") %>
  </div>
+
 
   <div class="actions">
     <div>

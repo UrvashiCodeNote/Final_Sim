@@ -4,13 +4,14 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+   has_many :contact_books, as: :contactable
+   has_many :address, as: :addressable
    belongs_to :service_provider 
-   enum role: %i(admin superadmin).freeze
+   enum roles: %i(admin superadmin).freeze
 
-   after_create :assign_maile
+   after_create :assign_mail
 
-    def assign_maile
-      UserMailer.welcome_email(@user).deliver_now
+    def assign_mail
+      UserMailer.welcome_email(self).deliver_now
     end
-
 end
