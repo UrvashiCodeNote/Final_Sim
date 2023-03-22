@@ -9,4 +9,7 @@ Rails.application.routes.draw do
            :sessions => "users/sessions",
            :registrations => "users/registrations" }
    get "/login", :to => "devise/sessions#new"
+    resources :customers
+    get 'contact_books', to: 'contact_books#generate_number'
+
 end

@@ -3,7 +3,6 @@ class CreateContactBooks < ActiveRecord::Migration[7.0]
     create_table :contact_books do |t|
       t.references :contactable, polymorphic: true
       t.string :phone
-      t.string  :city
       t.integer :status
       
       t.timestamps

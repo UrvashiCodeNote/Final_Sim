@@ -5,7 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
    has_many :contact_books, as: :contactable
-   has_many :address, as: :addressable
+   has_many :customers
+   has_many :addresses, as: :addressable
    belongs_to :service_provider 
    enum roles: %i(admin superadmin).freeze
 
