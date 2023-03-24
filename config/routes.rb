@@ -6,9 +6,10 @@ Rails.application.routes.draw do
   # root "articles#index"
    root to: "home#index"
    devise_for :users, controllers: {
+           :registrations => "users/registrations",
            :sessions => "users/sessions",
-           :registrations => "users/registrations" }
-   get "/login", :to => "devise/sessions#new"
+           confirmations: 'users/confirmations' }
+    get "/login", :to => "devise/sessions#new"
     resources :customers
     get 'contact_books', to: 'contact_books#generate_number'
 

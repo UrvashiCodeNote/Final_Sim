@@ -13,13 +13,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super do
-      binding.pry
     services = ServiceProvider.find_by_services(params[:services])
     resource.service_provider_id = services.id
     resource.save
       flash[:success] = "Thank you to join this application! We'll get contact you soon!"
-     
-   end
+    end
   end
 
   # GET /resource/edit

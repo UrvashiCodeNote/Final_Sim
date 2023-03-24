@@ -1,0 +1,62 @@
+<h1>New Customer</h1>
+
+<%= form_with model: @customer do |form| %>
+  <div>
+    <%= form.label :first_name %><br>
+    <%= form.text_field :first_name %>
+    <% @customer.errors.full_messages_for(:first_name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :last_name %><br>
+    <%= form.text_field :last_name %><br>
+    <% @customer.errors.full_messages_for(:last_name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :email %><br>
+    <%= form.text_field :email %>
+    <% @customer.errors.full_messages_for(:email).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :aadhar_number %><br>
+    <%= form.text_field :aadhar_number %>
+    <% @customer.errors.full_messages_for(:aadhar_number).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :aadhar_image %><br>
+     <%= form.file_field :aadhar_image %>
+    <% @customer.errors.full_messages_for(:aadhar_image).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :address %><br>
+    <%= form.text_area :address %>
+  </div>
+
+  <div>
+    <%= form.label :city %><br>
+    <%= form.text_field :city %>
+  </div>
+
+  <%= link_to 'Generate Phone Number', contact_books_path,remote: true %>
+
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+
+

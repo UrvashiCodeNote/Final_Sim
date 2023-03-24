@@ -5,13 +5,7 @@ class UserMailer < ApplicationMailer
   def welcome_email(user)
     byebug
     @user = user
-     # @url  = 'http://example.com/login'
+    @url = "http://localhost:3000/users/sign_in"
     mail(to: @user.email, subject: 'Successful Signup in SIM Provider Application')
   end
-
-
-  #  def welcome_email(user)
-  #   @user = 
-  #   mail(:to => user.email, :subject => 'Welcome')       
-  # end
 end
