@@ -12,5 +12,7 @@ Rails.application.routes.draw do
     get "/login", :to => "devise/sessions#new"
     resources :customers
     get 'contact_books', to: 'contact_books#generate_number'
+    patch 'contact_books', to: 'contact_books#update_number'
+    post 'verify', to: 'customers#verify'
 
 end

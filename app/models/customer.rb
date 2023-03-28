@@ -11,5 +11,21 @@ class Customer < ApplicationRecord
    validates :email, presence: true, uniqueness: true
    validates :first_name, :last_name, presence: true, length: { minimum: 2 }
    # validates :aadhar_image, presence: true 
+   attr_accessor :phone
 
+   after_update :sim_activated
+
+   after_create :customer_mailer
+
+   def customer_mailer
+     CustomerMailer.new_customer_create(self).deliver_now
+   end
+
+   def sim_activated
+      if contact_books.activated
+        CustomerMailer.update_status(self).deliver_now
+      else 
+        puts "not"
+      end
+   end
 end

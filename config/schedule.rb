@@ -24,6 +24,10 @@ set :environment, "development"
 
 # Learn more: http://github.com/javan/whenever
 
-recently_activated_numbers.each do |phone_number|
-  phone_number.update(status: "activated")
+every 1.minute do
+   rake "update_phone_status:update_phone_number_status"
 end
+
+# every :day, at:'12am' do 
+#   rake "update_phone_status:update_phone_number_status"
+# end

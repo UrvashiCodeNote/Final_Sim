@@ -51,12 +51,16 @@
     <%= form.text_field :city %>
   </div>
 
-  <%= link_to 'Generate Phone Number', contact_books_path,remote: true %>
-
+ 
+  <%= form.label :phone %><br>
+  <div style="border: 1px solid black; padding: 10px; width: 100px;">
+    <%=  form.hidden_field :phone, value:  @customer.phone %>
+     <%= hidden_field_tag "phone", @customer.phone %>
+   <%= @customer.phone %>
+   <%= form.submit "Verify" ,formaction: verify_path, method: :post, data: { turbo: "true" } %>
+  </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit "Create Customer"  %>
   </div>
 <% end %>
-
-
