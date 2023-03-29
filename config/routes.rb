@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  scope "(:locale)", locale: /en|sw/ do
    root to: "home#index"
    devise_for :users, controllers: {
            :registrations => "users/registrations",
@@ -14,5 +15,6 @@ Rails.application.routes.draw do
     get 'contact_books', to: 'contact_books#generate_number'
     patch 'contact_books', to: 'contact_books#update_number'
     post 'verify', to: 'customers#verify'
-
+    get 'customers', to: 'customers#index'
+  end
 end

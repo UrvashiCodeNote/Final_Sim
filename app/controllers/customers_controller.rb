@@ -32,6 +32,12 @@ class CustomersController < ApplicationController
     end
   end
 
+  def index
+    @customer = Customer.all 
+    @customer_details = @customer.includes([:addresses],[:contact_books])
+     render :index
+  end
+
 
   def show 
      @customer = Customer.find(params[:id])
