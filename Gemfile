@@ -27,8 +27,6 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
-# Use Redis adapter to run Action Cable in production
-gem "redis", "~> 4.0"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
@@ -49,14 +47,10 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 
-gem 'devise'
-gem 'byebug'
-gem 'pry'
-gem 'actionmailer'
-
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem "letter_opener"
 end
 
 group :development do
@@ -76,3 +70,16 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+
+gem 'bootstrap'
+gem 'jquery-rails'
+gem 'popper_js'
+gem 'devise'
+gem 'byebug'
+gem 'pry'
+gem 'actionmailer'
+gem 'whenever', require: false
+gem 'rails-i18n', '~> 7.0.0'
+gem 'sidekiq' 
+gem "redis"

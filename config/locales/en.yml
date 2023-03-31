@@ -30,11 +30,12 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  first_name: "First name"
-  last_name: "Last name"
-  email: "Email"
-  aadhar_num: "Aadhar number"
-  aadhar_img: "Aadhar image"
-  address: "Address"
-  city: "City"
-  phone: "Phone"
+  first_name: First name
+  last_name: Last name
+  email: Email
+  aadhar_num: Aadhar number
+  aadhar_img: Aadhar image
+  address: Address
+  city: City
+  phone: Phone
+  customer: New Customer

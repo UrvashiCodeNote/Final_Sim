@@ -15,7 +15,6 @@ class User < ApplicationRecord
    after_create :assign_mail
 
     def assign_mail
-      byebug
-      UserMailer.welcome_email(self).deliver_now
+      WelcomeEmailJob.perform_later(self)
     end
 end

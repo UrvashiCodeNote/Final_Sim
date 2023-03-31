@@ -16,7 +16,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
     services = ServiceProvider.find_by_services(params[:services])
     resource.service_provider_id = services.id
     resource.save
-      flash[:success] = "Thank you to join this application! We'll get contact you soon!"
     end
   end
 

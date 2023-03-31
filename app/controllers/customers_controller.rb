@@ -1,4 +1,4 @@
-class CustomersController < ApplicationController
+pclass CustomersController < ApplicationController
 
    include Utility
 

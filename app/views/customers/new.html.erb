@@ -1,8 +1,12 @@
-<h1>New Customer</h1>
+<h1><%= t "customer" %></h1>
+
+<% if flash[:notice] %>
+  <h2>Customer Created Successfully</h2>
+<% end %>
 
 <%= form_with model: @customer do |form| %>
   <div>
-    <%= form.label :first_name, "#{t('city')}" %><br>
+    <%= form.label :first_name, "#{t('first_name')}" %><br>
     <%= form.text_field :first_name %>
     <% @customer.errors.full_messages_for(:first_name).each do |message| %>
       <div><%= message %></div>
@@ -10,7 +14,7 @@
   </div>
 
   <div>
-    <%= form.label :last_name, "#{t('city')}" %><br>
+    <%= form.label :last_name, "#{t('last_name')}" %><br>
     <%= form.text_field :last_name %><br>
     <% @customer.errors.full_messages_for(:last_name).each do |message| %>
       <div><%= message %></div>
@@ -18,7 +22,7 @@
   </div>
 
   <div>
-    <%= form.label :email, "#{t('city')}" %><br>
+    <%= form.label :email, "#{t('email')}" %><br>
     <%= form.text_field :email %>
     <% @customer.errors.full_messages_for(:email).each do |message| %>
       <div><%= message %></div>
@@ -26,7 +30,7 @@
   </div>
 
   <div>
-    <%= form.label :aadhar_number, "#{t('city')}" %><br>
+    <%= form.label :aadhar_number, "#{t('aadhar_num')}" %><br>
     <%= form.text_field :aadhar_number %>
     <% @customer.errors.full_messages_for(:aadhar_number).each do |message| %>
       <div><%= message %></div>
@@ -34,7 +38,7 @@
   </div>
 
   <div>
-    <%= form.label :aadhar_image, "#{t('city')}" %><br>
+    <%= form.label :aadhar_image, "#{t('aadhar_img')}" %><br>
      <%= form.file_field :aadhar_image %>
     <% @customer.errors.full_messages_for(:aadhar_image).each do |message| %>
       <div><%= message %></div>
@@ -42,7 +46,7 @@
   </div>
 
   <div>
-    <%= form.label :address, "#{t('city')}" %><br>
+    <%= form.label :address, "#{t('address')}" %><br>
     <%= form.text_area :address %>
   </div>
 
@@ -52,7 +56,7 @@
   </div>
 
  
-  <%= form.label :phone, "#{t('city')}" %><br>
+  <%= form.label :phone, "#{t('phone')}" %><br>
   <div style="border: 1px solid black; padding: 10px; width: 100px;">
     <%=  form.hidden_field :phone, value:  @customer.phone %>
      <%= hidden_field_tag "phone", @customer.phone %>
@@ -64,3 +68,6 @@
     <%= form.submit "Create Customer"  %>
   </div>
 <% end %>
+
+
+
